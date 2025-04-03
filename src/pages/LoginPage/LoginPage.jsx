@@ -19,6 +19,8 @@ export default function LoginPage() {
     if (userRole) {
       if (userRole.includes("khachHang")) {
         navigate("/");
+      } else if (userRole.includes("KhachHang")) {
+        navigate("/");
       } else if (userRole.includes("QuanTri")) {
         navigate("/admin/users");
       } else {

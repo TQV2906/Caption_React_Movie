@@ -42,12 +42,7 @@ export default function SignUpPage() {
             width: 600,
           }}
           initialValues={{
-            taiKhoan: "loi",
-            matKhau: "loi",
-            email: "loi@gmail.com",
-            soDt: "0123456789",
             maNhom: "GP01",
-            hoTen: "loi",
           }}
           onFinish={onFinish}
           autoComplete="off"
@@ -135,7 +130,7 @@ export default function SignUpPage() {
 
           {/* mã nhóm */}
           <Form.Item label="Mã nhóm" name="maNhom">
-            <Input />
+            <Input disabled />
           </Form.Item>
 
           {/* họ tên */}
