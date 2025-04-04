@@ -4,6 +4,10 @@ const initialState = {
   // phòng vé
   boxListChair: [],
   boxInfoMovie: [],
+  // ghế được chọn
+  danhSachGheDangDat: [],
+  // thông tin đặt vé của user
+  thongTinNguoiDung: [],
 };
 
 const boxTicketSlice = createSlice({
@@ -17,10 +21,31 @@ const boxTicketSlice = createSlice({
     setActionBoxInfoMovie: (state, action) => {
       state.boxInfoMovie = action.payload;
     },
+    // ghế được chọn
+    setActionGheDangDat: (state, action) => {
+      const danhSachGheDangDat = [...state.danhSachGheDangDat];
+      const index = danhSachGheDangDat.findIndex((gheDD) => {
+        return gheDD.maGhe === action.payload.maGhe;
+      });
+      if (index != -1) {
+        danhSachGheDangDat.splice(index, 1);
+      } else {
+        danhSachGheDangDat.push(action.payload);
+      }
+      return { ...state, danhSachGheDangDat: danhSachGheDangDat };
+    },
+    // thông tin đặt vé của user
+    setActionThongTinNguoiDung: (state, action) => {
+      state.thongTinNguoiDung = action.payload;
+    },
   },
 });
 
-export const { setActionBoxListChair, setActionBoxInfoMovie } =
-  boxTicketSlice.actions;
+export const {
+  setActionBoxListChair,
+  setActionBoxInfoMovie,
+  setActionGheDangDat,
+  setActionThongTinNguoiDung,
+} = boxTicketSlice.actions;
 
 export default boxTicketSlice.reducer;

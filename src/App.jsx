@@ -42,7 +42,7 @@ function App() {
           {/* trang chi tiết phòng phim */}
           <Route
             path="/detail-box-movie/:maLichChieu"
-            element={<Template content={<DetailMovieTheaterPage />} />}
+            element={<DetailMovieTheaterPage />}
           />
           {/* trang admin */}
           <Route path="/admin" element={<Template content={<AdminPage />} />} />

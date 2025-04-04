@@ -1,24 +1,29 @@
 import { Button } from "antd";
 import React from "react";
+import "../ListChairComponent/StyleChairComponent.css";
+import "./StateChairComponent.css";
+import { UserOutlined } from "@ant-design/icons";
 
 export default function StateChairComponent() {
   return (
     <div className="w-[5%] flex flex-col justify-center items-center">
       <div className="text-center">
-        <div className="w-14 bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded m-1">
-          X
-        </div>
-        Đã đăt
+        <button className="ghe gheDaDuocDat">
+          <UserOutlined />
+        </button>
+        <p>Tôi đã đặt</p>
       </div>
       <div className="text-center">
-        <Button className="w-16">X</Button>
-        <span>Thường</span>
+        <button className="ghe gheDaDat">X</button>
+        <p>Đã đặt</p>
       </div>
       <div className="text-center">
-        <Button color="danger" variant="solid" className="w-16">
-          X
-        </Button>
-        <span>Vip</span>
+        <button className="ghe">X</button>
+        <p>Thường</p>
+      </div>
+      <div className="text-center">
+        <button className="ghe gheVip">X</button>
+        <p>Vip</p>
       </div>
     </div>
   );
